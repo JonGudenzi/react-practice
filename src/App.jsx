@@ -5,6 +5,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import ToggleBox from "./ToggleBox";
 import ClickBox from "./ClickBox";
+import InputBox from "./InputBot";
 
 function App() {
   const boxes = [
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <div className="App">
+      <InputBox />
       <ClickBox />
       <h1>🔥🔥 JON TEST HEADER 🔥🔥</h1>
 
