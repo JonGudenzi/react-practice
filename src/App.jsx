@@ -7,6 +7,7 @@ import ToggleBox from "./ToggleBox";
 import ClickBox from "./ClickBox";
 import InputBox from "./InputBot";
 import InputBox2 from "./InputBox2";
+import InputBox3 from "./InputBox3";
 
 function App() {
   const boxes = [
@@ -32,6 +33,10 @@ function App() {
 
   return (
     <div className="App">
+      <InputBox3 />
+      <br></br>
+      <br></br>
+      <br></br>
       <InputBox />
       <InputBox2 />
       <ClickBox />
