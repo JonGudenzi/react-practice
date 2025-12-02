@@ -16,7 +16,9 @@ return (
         <input
         value={inputState}
         onChange={(e) => setInputState(e.target.value)}></input>
-        <button onClick={submitHandler}>Add</button>
+        <button
+        disabled={!inputState}
+         onClick={submitHandler}>Add</button>
         <ul>{listItems.map((item, index) => (
             <li key={index}>{item}</li>
         ))}</ul>
