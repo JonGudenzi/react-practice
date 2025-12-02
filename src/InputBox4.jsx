@@ -5,6 +5,9 @@ const [inputState, setInputState] = useState("");
 const [listItems, setListItems] = useState([]);
 
 function submitHandler() {
+    if (inputState === ""){
+        return;
+    }
    setListItems(prev => [...prev, inputState]);
    setInputState("");
 }
