@@ -8,6 +8,7 @@ import ClickBox from "./ClickBox";
 import InputBox from "./InputBot";
 import InputBox2 from "./InputBox2";
 import InputBox3 from "./InputBox3";
+import InputBox4 from "./InputBox4";
 
 function App() {
   const boxes = [
@@ -33,6 +34,10 @@ function App() {
 
   return (
     <div className="App">
+      <InputBox4 />
+      <br></br>
+      <br></br>
+      <br></br>
       <InputBox3 />
       <br></br>
       <br></br>
