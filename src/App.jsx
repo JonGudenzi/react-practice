@@ -9,6 +9,8 @@ import InputBox from "./InputBot";
 import InputBox2 from "./InputBox2";
 import InputBox3 from "./InputBox3";
 import InputBox4 from "./InputBox4";
+import InputBox5 from "./InputBox5";
+
 
 function App() {
   const boxes = [
@@ -34,6 +36,10 @@ function App() {
 
   return (
     <div className="App">
+      <InputBox5 />
+      <br></br>
+      <br></br>
+      <br></br>
       <InputBox4 />
       <br></br>
       <br></br>
