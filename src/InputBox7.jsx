@@ -12,7 +12,7 @@ export default function InputBox7() {
         if (editListItem !== null && editInputRef.current) {
             editInputRef.current.focus();
         }
-    },[editListItem])
+    }, [editListItem])
 
     function addHandler() {
         const text = inputText.trim();
@@ -37,11 +37,16 @@ export default function InputBox7() {
         setNewEditText("");
     }
 
+    function cancelHandler() {
+        setEditListItem(null);
+        setNewEditText("");
+    }
+
     return (
         <div>
             <input
-            ref={mainInputRef} 
-            value={inputText}
+                ref={mainInputRef}
+                value={inputText}
                 onChange={(e) => setInputText(e.target.value)} />
 
             <button onClick={addHandler}
@@ -51,8 +56,8 @@ export default function InputBox7() {
                 <li key={index}>{
                     editListItem === index ? (
                         <input
-                        ref={editInputRef} 
-                        value={newEditText}
+                            ref={editInputRef}
+                            value={newEditText}
                             onChange={(e) => setNewEditText(e.target.value)} />
                     ) : (
                         item
@@ -68,8 +73,12 @@ export default function InputBox7() {
                                 setNewEditText(item);
                             }}>Edit</button>
                     )}
+                    {editListItem === index ? (
+                        <button onClick={cancelHandler}>Cancel</button>
+                    ) : (
+                        <button onClick={() => deleteHandler(index)}>Delete</button>
+                    )}
 
-                    <button onClick={() => deleteHandler(index)}>Delete</button>
                 </li>
             ))}</ul>
         </div>
