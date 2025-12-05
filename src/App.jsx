@@ -12,6 +12,7 @@ import InputBox4 from "./InputBox4";
 import InputBox5 from "./InputBox5";
 import InputBox6 from "./InputBox6";
 import InputBox7 from "./InputBox7";
+import Message from "./Message";
 
 
 function App() {
@@ -38,6 +39,10 @@ function App() {
 
   return (
     <div className="App">
+      <Message text="hello Jon"/>
+      <br></br>
+      <br></br>
+      <br></br>
       <InputBox7 />
       <br></br>
       <br></br>
