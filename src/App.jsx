@@ -37,9 +37,26 @@ function App() {
     setOpenBoxId(prevId => (prevId === boxId ? null : boxId));
   }
 
+ const messages = [
+  { id: 1, text: "Hello Jon!" },
+  { id: 2, text: "React is wild" },
+  { id: 3, text: "Ace is watching 😈" },
+];
+
+function handleMessageClick(id) {
+  console.log("Message clicked:", id);
+}
+
   return (
     <div className="App">
-      <Message text="hello Jon"/>
+      {messages.map((message) => (
+  <Message
+    key={message.id}
+    id={message.id}
+    text={message.text}
+    onButtonClick={handleMessageClick}
+  />
+))}
       <br></br>
       <br></br>
       <br></br>
