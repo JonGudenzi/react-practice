@@ -15,7 +15,13 @@ import InputBox7 from "./InputBox7";
 import Message from "./Message";
 
 
+
+
+
 function App() {
+
+  const [selectedId, setSelectedId] = useState(null);
+
   const boxes = [
     { id: 1, label: "Box One", content: "This is box one content." },
     { id: 2, label: "Box Two", content: "This is box two content." },
@@ -44,17 +50,24 @@ function App() {
 ];
 
 function handleMessageClick(id) {
-  console.log("Message clicked:", id);
+  setSelectedId(id); 
 }
 
   return (
+
+
+
     <div className="App">
+      {selectedId !== null && (
+  <p>You selected message #{selectedId}</p>
+)}
       {messages.map((message) => (
   <Message
     key={message.id}
     id={message.id}
     text={message.text}
     onButtonClick={handleMessageClick}
+    isSelected={selectedId === message.id}
   />
 ))}
       <br></br>
