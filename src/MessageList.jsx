@@ -16,28 +16,33 @@ export default function MessageList() {
 
 function handleDelete(id) {
   setMessages(prev => prev.filter(msg => msg.id !== id));
+  if (selectedId === id) {
+    setSelectedId(null);
+  }
 }
+
+
+const selectedMessage = messages.find(msg => msg.id === selectedId);
 
   return (
     <div>
       <h2>Message List</h2>
 
       {messages.map((msg) => (
-        <div key={msg.id}
-          onClick={() => handleSelect(msg.id)}
-          style={{
-            backgroundColor: msg.id === selectedId ? "blue" : "black",
-            color: "white",
-            padding: "4px"
-          }}> <MessageItem
+         <MessageItem
           key={msg.id}
           id={msg.id}
           text={msg.text}
           isSelected={msg.id === selectedId}
           onSelect={handleSelect}
           onDelete={handleDelete} />
-          </div>
       ))}
+      {selectedId !== null && (
+  <p style={{ marginTop: "12px" }}>
+    You selected: {selectedMessage.text}
+  </p>
+)}
+
     </div>
   );
 }
