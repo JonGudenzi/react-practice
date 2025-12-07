@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CounterDisplay from "./CounterDisplay";
+import ResetButton from "./ResetButton";
 
 export default function ClickCounter() {
 
@@ -18,12 +19,14 @@ export default function ClickCounter() {
 
             <button onClick={clickHandler}>Add</button>
 
-            <button
+            <ResetButton
                 onClick={clickReset}
-                disabled={clickCount === 0}>Reset
-            </button>
-            <CounterDisplay 
-            count={clickCount}/>
+                disabled={clickCount === 0} />
+
+
+
+            <CounterDisplay
+                count={clickCount} />
         </div>
     )
 }
