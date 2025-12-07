@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CounterDisplay from "./CounterDisplay";
 import ResetButton from "./ResetButton";
+import IncrementButton from "./IncrementButton";
 
 export default function ClickCounter() {
 
@@ -14,6 +15,10 @@ export default function ClickCounter() {
         setClickCount(0);
     }
 
+   function clickIncrement(amount) {
+    setClickCount(prev => (prev + amount));
+   }
+
     return (
         <div>
 
@@ -23,7 +28,9 @@ export default function ClickCounter() {
                 onClick={clickReset}
                 disabled={clickCount === 0} />
 
-
+            <IncrementButton
+            amount={5}
+            onIncrement={clickIncrement} />
 
             <CounterDisplay
                 count={clickCount} />
