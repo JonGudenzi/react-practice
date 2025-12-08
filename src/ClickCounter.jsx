@@ -2,6 +2,7 @@ import { useState } from "react";
 import CounterDisplay from "./CounterDisplay";
 import ResetButton from "./ResetButton";
 import IncrementButton from "./IncrementButton";
+import TextInput from "./TextInput";
 
 export default function ClickCounter() {
 
@@ -34,6 +35,9 @@ export default function ClickCounter() {
 
             <CounterDisplay
                 count={clickCount} />
+
+                <TextInput />
         </div>
+
     )
 }
