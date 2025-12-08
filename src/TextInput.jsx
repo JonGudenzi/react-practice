@@ -1,15 +1,11 @@
-import { useState } from "react";
-
-export default function TextInput() {
-
-    const [inputText, setInputText] = useState("");
-
-    return (
-        <div>
-        <input 
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}/>
-        <p>{inputText}</p>
-        </div>
-    )
+export default function TextInput({ value, onChangeText }) {
+  return (
+    <div>
+      <input
+        value={value}
+        onChange={(e) => onChangeText(e.target.value)}
+      />
+      <p>{value}</p>
+    </div>
+  );
 }
